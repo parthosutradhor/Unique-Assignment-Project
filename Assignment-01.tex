@@ -1,0 +1,2519 @@
+\documentclass[12pt, a4paper]{exam}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{multirow,setspace,array,systeme}
+\usepackage{rotating}
+\usepackage{tikz-cd}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage[normalem]{ulem}
+\usepackage[left=0.8in, top=0.7in, total={6.6in,10in}]{geometry}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
+\usepackage{multirow,setspace,array,systeme}
+\usepackage{arydshln}
+\pagestyle{empty}
+\begin{document}
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: FARIHA FEROZ} \par 
+    \large \textbf{ID: 21301185} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: SADHMAN HOSSAIN} \par 
+    \large \textbf{ID: 21301734} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: OVISHEK SIKDER OLEEN} \par 
+    \large \textbf{ID: 22101557} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: SHEIKH HAMIM ISLAM RAJU} \par 
+    \large \textbf{ID: 22201994} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: OMER HOSSAIN} \par 
+    \large \textbf{ID: 22221137} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: ASIF AHMED AKASH} \par 
+    \large \textbf{ID: 22221177} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: SRIJAN KARMAKER} \par 
+    \large \textbf{ID: 22299450} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: MOHAMMAD HASIN AL- RAIYAN} \par 
+    \large \textbf{ID: 23201223} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: PRANGAN BARUA} \par 
+    \large \textbf{ID: 23201370} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: NAFISA TABASSUM} \par 
+    \large \textbf{ID: 23201372} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: TALHA IBN ANWAR} \par 
+    \large \textbf{ID: 23201392} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: IBTIDA HOQUE CHOWDHURY} \par 
+    \large \textbf{ID: 23201433} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: TAWHID HASAN} \par 
+    \large \textbf{ID: 23201593} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: RAHUL RAHMAN SHIHAB} \par 
+    \large \textbf{ID: 23221023} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: FARZANA SULTANA NASHITA} \par 
+    \large \textbf{ID: 23301444} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: JUNAED HASAN} \par 
+    \large \textbf{ID: 23321027} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: TOWSIF HASSAN} \par 
+    \large \textbf{ID: 23341043} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: SADIA RAHMAN SUPTY} \par 
+    \large \textbf{ID: 24101042} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: RUBAIA TABASSUM SHOMAPTY} \par 
+    \large \textbf{ID: 24101079} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: MAHBUBA KHANOM MOHUA} \par 
+    \large \textbf{ID: 24101101} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: DEWAN SIFAT RAHMAN} \par 
+    \large \textbf{ID: 24101128} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: ANHA SADMAN} \par 
+    \large \textbf{ID: 24101130} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: OHI AHMED} \par 
+    \large \textbf{ID: 24101194} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: ANOY DATTA} \par 
+    \large \textbf{ID: 24101395} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: MD. KHALID MAHMUD} \par 
+    \large \textbf{ID: 24101490} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: RAISA ZAHIN} \par 
+    \large \textbf{ID: 24101491} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: AHRAR HAQUE} \par 
+    \large \textbf{ID: 24101515} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: LAMIA RAHMAN} \par 
+    \large \textbf{ID: 24101551} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: SAHIRA HUMAIRA HRIDIKA} \par 
+    \large \textbf{ID: 24121142} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: MOHAMMAD ZAWAAD MOSTOFA} \par 
+    \large \textbf{ID: 24121143} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: RUPAM MANDAL} \par 
+    \large \textbf{ID: 24121270} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: TASNIM REDWAN} \par 
+    \large \textbf{ID: 24141015} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: PROMIT DEY SARKER ARJAN} \par 
+    \large \textbf{ID: 24141134} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: AFFAN FAHIM KHAN} \par 
+    \large \textbf{ID: 24221202} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: TAHSIN MOHAMMAD MUNIF} \par 
+    \large \textbf{ID: 24301136} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: MD. ISHTIAQ MOZUMDER} \par 
+    \large \textbf{ID: 24301219} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: SUPORNO GHOSH} \par 
+    \large \textbf{ID: 24301509} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: SABAH ISLAM SAFIA} \par 
+    \large \textbf{ID: 24310009} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+%--------------------------------------------
+	\noindent
+	\begin{minipage}[l]{0.1\textwidth}
+		\noindent
+		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
+	\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+	\begin{center}
+		\large BRAC University \par
+		\large	Department of Mathematics and Natural Sciences	\par
+	\large \textbf{MAT215: Complex Variables \& Laplace Transform}	\par
+	\large \textbf{Assignment-01} \par 
+    \large Section: 12 \par 
+    \large \textbf{Name: URNISHA CHAKMA} \par 
+    \large \textbf{ID: 24321046} \par 
+	\end{center}
+\end{minipage}
+\par
+\vspace{0.2in}
+\noindent
+\uline{Submission Date:	\hfill Summer 2025		\hfill Total  Marks: 15}
+\par 
+\vspace{0.15in}
+\noindent
+\centering
+{\small \bfseries 	Use this page as the cover page of your assignment }
+
+\begin{questions}
+    \question
+    Using the definition \hfill \textbf{5$\times$5=25} \par
+    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
+    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
+    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
+    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
+    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
+
+    \question
+    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
+    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
+    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
+    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
+    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
+    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
+
+    \question
+    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
+    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
+    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
+    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
+    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
+    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    
+
+
+
+\end{questions}
+
+
+
+\pagebreak
+
+%--------------------------------------------
+
+
+
+\end{document}
