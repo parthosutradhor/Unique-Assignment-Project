@@ -19,7 +19,7 @@ COURSE_NAME = r"Complex Variables \& Laplace Transform"
 SECTION = "12"
 TOTAL_POINTS="100"
 
-TEMPLATE_PATH = "question_template.txt"
+TEMPLATE_PATH = "question_template.tex"
 WORKBOOK_PATH = "course-attendee.xlsx"
 SHEET_NAME = "Worksheet"
 LOGO_FILE = "Brac_University_Logo.png"
