@@ -1,90 +1,112 @@
-\documentclass[12pt, a4paper]{exam}
+\documentclass[12pt,a4paper]{article}
+
+%=============================
+%   ENCODING & FONTS
+%=============================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}        % Improved Latin Modern font
+\usepackage{microtype}      % Better kerning and spacing
+
+%=============================
+%   PACKAGES
+%=============================
+\usepackage{amsmath, amssymb}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{amssymb}
-\usepackage{multirow,setspace,array,systeme}
-\usepackage{rotating}
-\usepackage{tikz-cd}
-\usepackage{array}
-\usepackage{siunitx}
-\usepackage[normalem]{ulem}
-\usepackage[left=0.8in, top=0.7in, total={6.6in,10in}]{geometry}
-\usepackage[normalem]{ulem}
-\renewcommand\ULthickness{1.0pt}   %%---> For changing thickness of underline
-\setlength\ULdepth{1.3ex}%\maxdimen ---> For changing depth of underline
-\usepackage{multirow,setspace,array,systeme}
-\usepackage{arydshln}
-\pagestyle{empty}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{titlesec}
+\usepackage{fontawesome5}   % for icons like university, book, user, etc.
+
+%=============================
+%   PAGE SETUP
+%=============================
+\geometry{margin=.9in}
+\setstretch{1.15}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\faUniversity\ \textbf{BRAC University}}
+\fancyhead[R]{\faBook\ \textbf{Department of Mathematics and Natural Sciences}}
+\fancyfoot{} % Remove page number
+
+%=============================
+%   TITLE FORMAT
+%=============================
+\titleformat{\section}{\large\bfseries\color{MidnightBlue}}{\thesection.}{0.5em}{}
+
+%=============================
+%   CUSTOM QUESTION COMMAND
+%=============================
+\newcounter{questionno}
+\newcommand{\Question}[1]{%
+    \stepcounter{questionno}
+    \newpage
+    \section*{\faQuestionCircle\ Question \thequestionno}
+    \vspace{0.5em}
+    #1
+    \\[2em]
+    \noindent
+    \textbf{\faPenFancy\ Solution:}
+    \vspace{8cm}
+}
+
+%=============================
+%   DOCUMENT BODY
+%=============================
 \begin{document}
 
+%----------- COVER PAGE -----------
+\begin{titlepage}
+    \centering
+    \includegraphics[width=4cm]{Brac_University_Logo.png}\\[1.1cm]
 
+    {\Huge \faUniversity\ \textbf{BRAC University}}\\[0.4cm]
+    {\Large Department of Mathematics and Natural Sciences}\\[1cm]
 
-%--------------------------------------------
-	\noindent
-	\begin{minipage}[l]{0.1\textwidth}
-		\noindent
-		\includegraphics[width=2.2\textwidth]{Brac_University_Logo.png}
-	\end{minipage}
-\hfill
-\begin{minipage}[c]{0.8\textwidth}
-	\begin{center}
-		\large BRAC University \par
-		\large	Department of Mathematics and Natural Sciences	\par
-	\large \textbf{@Course_Code@: @Course_Name@}	\par
-	\large \textbf{@Assesment_Type@} \par 
-    \large Section: @Section@ \par 
-    \large \textbf{Name: @Name@} \par 
-    \large \textbf{ID: @ID@} \par 
-	\end{center}
-\end{minipage}
-\par
-\vspace{0.2in}
-\noindent
-\uline{Submission Date:	\hfill @Semester_Name@		\hfill Total  Marks: 15}
-\par 
-\vspace{0.15in}
-\noindent
-\centering
-{\small \bfseries 	Use this page as the cover page of your assignment }
-
-\begin{questions}
-    \question
-    Using the definition \hfill \textbf{5$\times$5=25} \par
-    a) Find the derivative of $f(z)=\frac{@Q1a-a@z-@Q1a-b@}{@Q1a-c@z+@Q1a-d@i} $ at $ z = i$ . \par
-    b) Find the derivative of $f(z) = \frac{@Q1b-k@}{@Q1b-a@z + @Q1b-b@} $ at $ z = z_0$ . \par
-    c) Show that $f(z) = @Q1c-a@z^2 + @Q1c-b@z - @Q1c-c@$ is differentiable at all points . \par
-    d) Show that $f(z) = @Q1d-a@z\bar{z} - @Q1d-b@z + @Q1d-c@\bar{z}$ is not differentiable at $z=0$ . \par
-    e) Find the derivative of $f(z) = \frac{@Q1e-k@}{z^2} $ at $ z = @Q1e-a@+@Q1e-b@i$ . \par
-
-    \question
-    Using C-R equatins determine whether the functions are analytic or not.  \hfill \textbf{5$\times$5=25} \par
-    a) $f(z) = @Q2a-a@ \sinh{(@Q2a-b@z)}$ \par
-    b) $f(z) = @Q2b-a@ \cos{(@Q2b-b@z)}$ \par
-    c) $f(z) = @Q2c-a@|z|^2 + @Q2c-b@z - @Q2c-c@\bar{z}$ \par
-    d) $f(z) = \frac{@Q2d-k@}{z+@Q2d-a@-@Q2d-b@i}$ \par
-    e) $f(z) = @Q2e-a@z^2e^{@Q2e-b@z}$ \par
-
-    \question
-    Show that the given function \textbf{$U$} (or \textbf{$V$}) is harmonic. Determine the harmonic conjugate \textbf{$V$} (or \textbf{$U$}) such that \textbf{U+iV} becomes analytic.  \hfill \textbf{5$\times$10=50}\par
-    a) Given $V=@Q3a-k@ \ln{ \left( (x-@Q3a-a@)^2 + (y-@Q3a-b@)^2\right)}$, show that $V$ is harmonic and find $U$. \par
-    b) Given $U=@Q3b-3a@x^2y-@Q3b-b@x^2-@Q3b-a@y^3+@Q3b-b@y^2$, show that $U$ is harmonic and find $V$.  \par
-    c) Given $V=@Q3c-p@ e^{-@Q3c-a@x}\cos{(@Q3c-a@y)}-@Q3c-q@ e^{@Q3c-b@y}\sin{(@Q3c-b@x)}$, show that $V$ is harmonic and find $U$.  \par
-    d) Given $U=@Q3d-k@ \sin{(@Q3d-a@x) \cosh{(@Q3d-a@y)}}$, show that $U$ is harmonic and find $V$.  \par
-    e) Given $V=@Q3e-a@ x e^{-@Q3e-b@x}\cos{(@Q3e-b@y)}+@Q3e-a@ y e^{-@Q3e-b@x}\sin{(@Q3e-b@y)}$, show that $V$ is harmonic and find $U$.  \par
+    {\LARGE \textbf{Total Points: 15}}\\[1cm]
     
+    {\LARGE \faClipboard\ \textbf{@Assesment_Type@}}\\[0.7cm]
+    {\Large \textbf{Course Code: @Course_Code@}}\\[0.3cm]
+    {\Large @Course_Name@}\\[1.8cm]
 
+    %----------- Student Info -----------
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{cc}
+        \textbf{\Large \faUser\ Name:} \Large \textbf{@Name@} \\[0.3cm]
+        \textbf{\Large \faIdCard\ Student ID:} \Large \textbf{@ID@} \\[0.6cm]
+        \textbf{\Large \faUsers\ Section:} \Large \textbf{@Section@} \\[0.3cm]
+        \textbf{\Large \faCalendar\ Semester:} \Large \textbf{@Semester_Name@} \\[0.7cm]
+        \textbf{\Large \faClock\ Submission Date:} \Large \textbf{\_\_\_\_\_\_\_\_\_\_\_} \\
+    \end{tabular}
 
+    \vfill
+    {\large \textit{Assigned by}}\\[0.3cm]
+    {\Large \faChalkboardTeacher\ \textbf{Partho Sutra Dhor}}\\
+    {\large Lecturer, Department of MNS}\\
+    {\large BRAC University}
+\end{titlepage}
 
-\end{questions}
+%----------- QUESTIONS -----------
+\Question{
+Let $A = \begin{pmatrix} 2 & 1 \\ 3 & 4 \end{pmatrix}$. Compute the inverse of $A$ using row reduction.
+}
 
+\Question{
+Find the Fourier series of $f(x) = x$ defined on $[-\pi, \pi]$.
+}
 
-
-\pagebreak
-
-%--------------------------------------------
-
-
+\Question{
+Determine whether the system
+\[
+\begin{cases}
+x + 2y + 3z = 1,\\
+2x + 4y + 6z = 2,\\
+x - y + z = 3
+\end{cases}
+\]
+is consistent. If yes, find all solutions.
+}
 
 \end{document}
-

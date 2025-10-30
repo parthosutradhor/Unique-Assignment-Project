@@ -10,6 +10,7 @@ SEMESTER_NAME = "Summer 2025"
 COURSE_CODE = "MAT215"
 COURSE_NAME = r"Complex Variables \& Laplace Transform"
 SECTION = "12"
+TOTAL_POINTS="100"
 
 TEMPLATE_PATH = "question_template.txt"
 OUTPUT_PATH = f"{ASSESSMENT_TYPE}.tex"
@@ -100,7 +101,8 @@ while True:
         Course_Name=COURSE_NAME,
         Course_Code=COURSE_CODE,
         Semester_Name=SEMESTER_NAME,
-        Assesment_Type=ASSESSMENT_TYPE
+        Assesment_Type=ASSESSMENT_TYPE,
+        Total_Points=TOTAL_POINTS
     )
 
     append_to_output_file(replaced_text + "\n\n")

@@ -13,10 +13,11 @@ from datetime import datetime
 # CONFIGURATION
 # ==========================================
 ASSESSMENT_TYPE = "Assignment-01"
-SEMESTER_NAME = "Summer 2025"
+SEMESTER_NAME = "FALL 2025"
 COURSE_CODE = "MAT215"
 COURSE_NAME = r"Complex Variables \& Laplace Transform"
 SECTION = "12"
+TOTAL_POINTS="100"
 
 TEMPLATE_PATH = "question_template.txt"
 WORKBOOK_PATH = "course-attendee.xlsx"
@@ -24,7 +25,7 @@ SHEET_NAME = "Worksheet"
 LOGO_FILE = "Brac_University_Logo.png"
 
 # Number of rows to skip before starting data (adjust as needed)
-START_ROW = 36
+START_ROW = 39
 
 
 # ==========================================
@@ -163,7 +164,8 @@ while True:
         Course_Name=COURSE_NAME,
         Course_Code=COURSE_CODE,
         Semester_Name=SEMESTER_NAME,
-        Assesment_Type=ASSESSMENT_TYPE
+        Assesment_Type=ASSESSMENT_TYPE,
+        Total_Points=TOTAL_POINTS
     )
 
     safe_name = safe_filename(Name)
