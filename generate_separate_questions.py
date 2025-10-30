@@ -25,7 +25,7 @@ WORKBOOK_PATH = "course-attendee.xlsx"
 SHEET_NAME = "Worksheet"
 LOGO_FILE = "Brac_University_Logo.png"
 
-# Number of rows to skip before starting data (adjust as needed)
+# Number of rows to skip before starting data
 START_ROW = 35
 
 
@@ -234,6 +234,115 @@ def get_graphing_question_equality(n: int, a: str, b: str) -> str:
 
 
 
+
+def get_graphing_question_inequality(n: int, a: str, b: str) -> str:
+    arr = [
+        r'\left|\frac{z+ai}{z-ai}\right| < b',
+        r'\left|\frac{z+ai}{z-ai}\right| > b',
+        r'\left|\frac{z+ai}{z-ai}\right| \le b',
+        r'\left|\frac{z+ai}{z-ai}\right| \ge b',
+        r'|z+a|+|z-a| < 2a+b',
+        r'|z+a|+|z-a| > 2a+b',
+        r'|z+a|+|z-a| \le 2a+b',
+        r'|z+a|+|z-a| \ge 2a+b',
+        r'|z+ai|+|z-ai| < 2a+b',
+        r'|z+ai|+|z-ai| > 2a+b',
+        r'|z+ai|+|z-ai| \le 2a+b',
+        r'|z+ai|+|z-ai| \ge 2a+b',
+        r'|z-a|-|z+a| < 2a-b',
+        r'|z-a|-|z+a| > 2a-b',
+        r'|z-a|-|z+a| \le 2a-b',
+        r'|z-a|-|z+a| \ge 2a-b',
+        r'|z-ai|-|z+ai| < 2a-b',
+        r'|z-ai|-|z+ai| > 2a-b',
+        r'|z-ai|-|z+ai| \le 2a-b',
+        r'|z-ai|-|z+ai| \ge 2a-b'
+    ]
+
+    def evaluate_expr(expr: str, a: str, b: str) -> str:
+        """Evaluate expressions like 2a+b or 2a-b when a,b are numeric."""
+        try:
+            expr = expr.replace('2a', '2*a').replace('2b', '2*b')
+            a_val = float(a)
+            b_val = float(b)
+            expr = expr.replace('a', str(a_val)).replace('b', str(b_val))
+            val = eval(expr)
+            return str(int(val)) if val.is_integer() else str(val)
+        except Exception:
+            return expr  # keep symbolic if not numeric
+
+    s = arr[n - 1]
+
+    # --- handle ai first ---
+    s = s.replace('+ai', f'+{a}i').replace('-ai', f'-{a}i')
+
+    # --- detect and evaluate 2a±b patterns (for <, >, \le, \ge) ---
+    pattern = r'(\\le|\\ge|<|>)\s*(2a[+-]b)'
+    matches = re.findall(pattern, s)
+    for symbol, expr in matches:
+        val = evaluate_expr(expr, a, b)
+        s = s.replace(f"{symbol} {expr}", f"{symbol} {val}")
+
+    # --- replace all remaining a and b ---
+    s = re.sub(r'(?<![A-Za-z])a(?![A-Za-z])', a, s)
+    s = re.sub(r'(?<![A-Za-z])b(?![A-Za-z])', b, s)
+
+    return f"{s}"
+
+
+
+def get_prove_trig_hyp(n: int) -> str:
+    arr = [
+    r"\sin^{-1} z = \frac{1}{i} \ln \left( iz + \sqrt{1 - z^2} \right),",
+    r"\cos^{-1} z = \frac{1}{i} \ln \left( z + \sqrt{z^2 - 1} \right),",
+    r"\tan^{-1} z = \frac{1}{2i} \ln \left( \frac{1 + iz}{1 - iz} \right),",
+    r"\cosec^{-1} z = \frac{1}{i} \ln \left( \frac{i + \sqrt{z^2 - 1}}{z} \right),",
+    r"\sec^{-1} z = \frac{1}{i} \ln \left( \frac{1 + \sqrt{1 - z^2}}{z} \right),",
+    r"\cot^{-1} z = \frac{1}{2i} \ln \left( \frac{z + i}{z - i} \right),",
+    
+    r"\sinh^{-1} z = \ln \left( z + \sqrt{z^2 + 1} \right),",
+    r"\cosh^{-1} z = \ln \left( z + \sqrt{z^2 - 1} \right),",
+    r"\tanh^{-1} z = \frac{1}{2} \ln \left( \frac{1 + z}{1 - z} \right),",
+    r"\cosech^{-1} z = \ln \left( \frac{1 + \sqrt{z^2 + 1}}{z} \right),",
+    r"\sech^{-1} z = \ln \left( \frac{1 + \sqrt{1 - z^2}}{z} \right),",
+    r"\coth^{-1} z = \frac{1}{2} \ln \left( \frac{z + 1}{z - 1} \right)."
+    ]
+
+    s=arr[n-1]
+    return f"{s}"
+
+
+def get_solve_trig_hyp(n: int, a: int, b: int) -> str:
+    arr = [
+        r"\sin^{-1} z = a+bi",  r"\sin^{-1} z = a-bi",
+        r"\cos^{-1} z = a+bi",  r"\cos^{-1} z = a-bi",
+        r"\tan^{-1} z = a+bi",  r"\tan^{-1} z = a-bi",
+        r"\cosec^{-1} z = a+bi",  r"\cosec^{-1} z = a-bi",
+        r"\sec^{-1} z = a+bi",  r"\sec^{-1} z = a-bi",
+        r"\cot^{-1} z = a+bi",  r"\cot^{-1} z = a-bi",
+        r"\sinh^{-1} z = a+bi", r"\sinh^{-1} z = a-bi",
+        r"\cosh^{-1} z = a+bi", r"\cosh^{-1} z = a-bi",
+        r"\tanh^{-1} z = a+bi", r"\tanh^{-1} z = a-bi",
+        r"\cosech^{-1} z = a+bi", r"\cosech^{-1} z = a-bi",
+        r"\sech^{-1} z = a+bi", r"\sech^{-1} z = a-bi",
+        r"\coth^{-1} z = a+bi", r"\coth^{-1} z = a-bi"
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    # Replace 'a' and 'b' with actual numeric values
+    expr = re.sub(r'\ba\b', str(a), expr)
+    expr = re.sub(r'\bb\b', str(b), expr)
+
+    return expr
+
+
+
+
+
+
+
 # ==========================================
 # Placeholder Variables Replacement
 # ==========================================
@@ -262,10 +371,26 @@ while True:
         Semester_Name=SEMESTER_NAME,
         Assesment_Type=ASSESSMENT_TYPE,
         Total_Points=TOTAL_POINTS,
-        n=generate_integers_range(ID, "Q1_n", 1, 5, 7)[0],
-        z=complex_in_latex((generate_integers_range(ID, "Q1_r", 1, 2, 3)[0])**(generate_integers_range(ID, "Q1_n", 1, 5, 7)[0]), generate_integers_range(ID, "Q1_arg", 1, 0, 15)[0]),
-        graph_equation=get_graphing_question_equality(generate_integers_range(ID, "Q2_n", 1, 1, 5)[0], str(generate_integers_range(ID, "Q2_a", 1, 2, 9)[0],), str(generate_integers_range(ID, "Q2_b", 1, 2, 9)[0],))
+        
+        Q1_nn=generate_integers_range(ID, "Q1_n", 1, 5, 7)[0],
+        Q1_z=complex_in_latex((generate_integers_range(ID, "Q1_r", 1, 2, 3)[0])**(generate_integers_range(ID, "Q1_n", 1, 5, 7)[0]), generate_integers_range(ID, "Q1_arg", 1, 0, 15)[0]),
+
+        graph_equation=get_graphing_question_equality(generate_integers_range(ID, "Q2_n", 1, 1, 5)[0], str(generate_integers_range(ID, "Q2_a", 1, 4, 9)[0],), str(generate_integers_range(ID, "Q2_b", 1, 1, 7)[0],)),
+
+        graph_inequality=get_graphing_question_inequality(generate_integers_range(ID, "Q3_n", 1, 1, 20)[0], str(generate_integers_range(ID, "Q3_a", 1, 4, 9)[0],), str(generate_integers_range(ID, "Q3_b", 1, 1, 7)[0],)),
+
+        Q4_a=generate_integers_range(ID, "Q4_a", 1, 2, 9)[0],
+
+        Q4_z=complex_in_latex(generate_integers_range(ID, "Q4_r", 1, 2, 9)[0], generate_integers_range(ID, "Q4_arg", 1, 0, 15)[0]),
+
+        Q5_expression=get_prove_trig_hyp(generate_integers_range(ID, "Q5_n", 1, 1, 12)[0]),
+
+        Q6_expression=get_solve_trig_hyp(generate_integers_range(ID, "Q6_n", 1, 1, 24)[0], generate_integers_range(ID, "Q6_a", 1, 2, 9)[0], generate_integers_range(ID, "Q6_b", 1, 2, 9)[0])
     )
+
+
+
+
 
     safe_name = safe_filename(Name)
     tex_filename = f"{ID}_{safe_name}.tex"
