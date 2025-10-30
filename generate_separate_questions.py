@@ -7,6 +7,7 @@ import shutil
 import glob
 import time
 from datetime import datetime
+from sympy import symbols, cos, sin, pi, sqrt, simplify, Rational, latex, I
 
 
 # ==========================================
@@ -25,7 +26,7 @@ SHEET_NAME = "Worksheet"
 LOGO_FILE = "Brac_University_Logo.png"
 
 # Number of rows to skip before starting data (adjust as needed)
-START_ROW = 39
+START_ROW = 35
 
 
 # ==========================================
@@ -112,6 +113,9 @@ def delete_empty_dirs(directory):
                 print(f"⚠️ Could not remove folder {dir_path}: {e}")
 
 
+
+
+
 # ==========================================
 # PREPARATION
 # ==========================================
@@ -145,6 +149,98 @@ print("\n🚀 Starting PDF generation...\n")
 count_success, count_fail = 0, 0
 row = START_ROW
 
+
+# ==========================================
+# Question Bank
+# ==========================================
+
+def complex_in_latex(r_val, theta_index):
+
+    # --- Angle mapping (unit circle positions) ---
+    angle_map = {
+        0: 0,  1: 30,  2: 45,  3: 60,
+        4: 90, 5: 120, 6: 135, 7: 150,
+        8: 180, 9: 210, 10: 225, 11: 240,
+        12: 270, 13: 300, 14: 315, 15: 330
+    }
+
+    if theta_index not in angle_map:
+        raise ValueError("Angle index must be between 0 and 15.")
+
+    theta_deg = Rational(angle_map[theta_index])
+
+    # --- Convert modulus ---
+    try:
+        r = Rational(r_val)
+    except Exception:
+        r = simplify(r_val)
+
+    # --- Conversion to radians ---
+    theta_rad = theta_deg * pi / 180
+
+    # --- Symbolic components ---
+    x = simplify(r * cos(theta_rad))
+    y = simplify(r * sin(theta_rad))
+
+    # --- Symbolic complex number ---
+    z = simplify(x + y * I)
+
+    # --- Generate LaTeX output ---
+    latex_expr = latex(z)
+    latex_expr = latex_expr.replace(r'\operatorname{i}', 'i').replace(r'\mathrm{i}', 'i')
+
+    return f"{latex_expr}"
+
+
+def get_graphing_question_equality(n: int, a: str, b: str) -> str:
+    arr = [
+        r'\left|\frac{z+ai}{z-ai}\right|=b',
+        r'|z+a|+|z-a|=2a+b',
+        r'|z+ai|+|z-ai|=2a+b',
+        r'|z-a|-|z+a|=2a-b',
+        r'|z-ai|-|z+ai|=2a-b'
+    ]
+
+    def evaluate_expr(expr: str, a: str, b: str) -> str:
+        try:
+            expr = expr.replace('2a', '2*a').replace('2b', '2*b')
+            a_val = float(a)
+            b_val = float(b)
+            expr = expr.replace('a', str(a_val)).replace('b', str(b_val))
+            val = eval(expr)
+            return str(int(val)) if val.is_integer() else str(val)
+        except Exception:
+            return expr
+
+    s = arr[n - 1]
+
+    # --- handle ai first ---
+    s = s.replace('ai', f'{a}i').replace('+ai', f'+{a}i').replace('-ai', f'-{a}i')
+
+    # --- detect and evaluate 2a±b patterns ---
+    matches = re.findall(r'=(?:2a[+-]b)', s)
+    for m in matches:
+        expr = m[1:]
+        val = evaluate_expr(expr, a, b)
+        s = s.replace(m, f'={val}')
+
+    # --- replace all a and b ---
+    s = s.replace('{a}', f'{{{a}}}')
+    s = s.replace('{b}', f'{{{b}}}')
+    s = re.sub(r'(?<![A-Za-z])a(?![A-Za-z])', a, s)
+    s = re.sub(r'(?<![A-Za-z])b(?![A-Za-z])', b, s)
+
+    return f"{s}"
+
+
+
+# ==========================================
+# Placeholder Variables Replacement
+# ==========================================
+
+
+
+
 while True:
     ID = sheet.cell(row=row, column=1).value
     Name = sheet.cell(row=row, column=2).value
@@ -165,7 +261,10 @@ while True:
         Course_Code=COURSE_CODE,
         Semester_Name=SEMESTER_NAME,
         Assesment_Type=ASSESSMENT_TYPE,
-        Total_Points=TOTAL_POINTS
+        Total_Points=TOTAL_POINTS,
+        n=generate_integers_range(ID, "Q1_n", 1, 5, 7)[0],
+        z=complex_in_latex((generate_integers_range(ID, "Q1_r", 1, 2, 3)[0])**(generate_integers_range(ID, "Q1_n", 1, 5, 7)[0]), generate_integers_range(ID, "Q1_arg", 1, 0, 15)[0]),
+        graph_equation=get_graphing_question_equality(generate_integers_range(ID, "Q2_n", 1, 1, 5)[0], str(generate_integers_range(ID, "Q2_a", 1, 2, 9)[0],), str(generate_integers_range(ID, "Q2_b", 1, 2, 9)[0],))
     )
 
     safe_name = safe_filename(Name)
