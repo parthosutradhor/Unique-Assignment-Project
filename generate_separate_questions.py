@@ -333,7 +333,38 @@ def get_solve_trig_hyp(n: int, a: int, b: int) -> str:
 
     # Replace 'a' and 'b' with actual numeric values
     expr = re.sub(r'\ba\b', str(a), expr)
-    expr = re.sub(r'\bb\b', str(b), expr)
+    expr = expr.replace('b', str(b))
+
+    return expr
+
+
+def Q10_get_derivative(n: int, a: int, b: int, c: int) -> str:
+    arr = [
+        r"Using the definition show that $$f(z)=@a@z^2 + @b@z - @c@$$ is differentiable at all points. Also find the derivative.",
+        r"Using the definition show that $$f(z)=@a@z\bar{z} - @b@z + @c@\bar{z}$$ is not differentiable at $z=0$."
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    # Replace with actual numeric values
+    expr = expr.replace('@a@', str(a)).replace('@b@', str(b)).replace('@c@', str(c))
+
+    return expr
+
+
+def Q11_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
+    arr = [
+        r"Using the definition, find the derivative of \[f(z) = \frac{@a@z-@b@}{@c@z+@d@i} \quad \text{at} \quad z = i\].",
+        r"Using the definition, find the derivative of \[f(z) = \frac{@a@}{@b@z + @c@} \quad \text{at} \quad z = z_0\].",
+        r"Using the definition, find the derivative of \[f(z) = \frac{@a@}{z^2} \quad \text{at} \quad z = @b@+@c@i\]."
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    # Replace with actual numeric values
+    expr = expr.replace('@a@', str(a)).replace('@b@', str(b)).replace('@c@', str(c)).replace('@d@', str(d))
 
     return expr
 
@@ -385,7 +416,11 @@ while True:
 
         Q5_expression=get_prove_trig_hyp(generate_integers_range(ID, "Q5_n", 1, 1, 12)[0]),
 
-        Q6_expression=get_solve_trig_hyp(generate_integers_range(ID, "Q6_n", 1, 1, 24)[0], generate_integers_range(ID, "Q6_a", 1, 2, 9)[0], generate_integers_range(ID, "Q6_b", 1, 2, 9)[0])
+        Q6_expression=get_solve_trig_hyp(generate_integers_range(ID, "Q6_n", 1, 1, 24)[0], generate_integers_range(ID, "Q6_a", 1, 2, 9)[0], generate_integers_range(ID, "Q6_b", 1, 2, 9)[0]),
+
+        Q10=Q10_get_derivative(generate_integers_range(ID, "Q10_n", 1, 1, 2)[0], generate_integers_range(ID, "Q10_a", 1, 2, 9)[0], generate_integers_range(ID, "Q10_b", 1, 2, 9)[0], generate_integers_range(ID, "Q10_c", 1, 2, 9)[0]),
+
+        Q11=Q11_get_derivative(generate_integers_range(ID, "Q11_n", 1, 1, 3)[0], generate_integers_range(ID, "Q11_a", 1, 2, 9)[0], generate_integers_range(ID, "Q11_b", 1, 2, 9)[0], generate_integers_range(ID, "Q11_c", 1, 2, 9)[0], generate_integers_range(ID, "Q11_d", 1, 2, 9)[0])
     )
 
 
