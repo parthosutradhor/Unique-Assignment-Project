@@ -372,7 +372,7 @@ while True:
         Assesment_Type=ASSESSMENT_TYPE,
         Total_Points=TOTAL_POINTS,
         
-        Q1_nn=generate_integers_range(ID, "Q1_n", 1, 5, 7)[0],
+        Q1_n=generate_integers_range(ID, "Q1_n", 1, 5, 7)[0],
         Q1_z=complex_in_latex((generate_integers_range(ID, "Q1_r", 1, 2, 3)[0])**(generate_integers_range(ID, "Q1_n", 1, 5, 7)[0]), generate_integers_range(ID, "Q1_arg", 1, 0, 15)[0]),
 
         graph_equation=get_graphing_question_equality(generate_integers_range(ID, "Q2_n", 1, 1, 5)[0], str(generate_integers_range(ID, "Q2_a", 1, 4, 9)[0],), str(generate_integers_range(ID, "Q2_b", 1, 1, 7)[0],)),
