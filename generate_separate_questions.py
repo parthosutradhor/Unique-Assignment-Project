@@ -12,7 +12,7 @@ from datetime import datetime
 # ==========================================
 # CONFIGURATION
 # ==========================================
-ASSESSMENT_TYPE = "Assignment-01"
+ASSESSMENT_TYPE = "Assignment - 01"
 SEMESTER_NAME = "FALL 2025"
 COURSE_CODE = "MAT215"
 COURSE_NAME = r"Complex Variables \& Laplace Transform"
