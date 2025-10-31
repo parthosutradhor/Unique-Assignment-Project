@@ -26,7 +26,7 @@ SHEET_NAME = "Worksheet"
 LOGO_FILE = "Brac_University_Logo.png"
 
 # Number of rows to skip before starting data
-START_ROW = 35
+START_ROW = 2
 
 
 # ==========================================
@@ -196,7 +196,7 @@ def complex_in_latex(r_val, theta_index):
 def Q1_get_nth_root(n: int, r_val: int, theta_index: int) -> str:
 
     # Get the LaTeX template
-    expr = r"Find all possible values of $z$ such that $$z^@n@ = @z@$$ Locate them in the complex plane. Show that they are contained in a circle and find the radius of that circle. Also find the angular distance between two adjacent roots."
+    expr = r"Find all possible values of $z$ satisfying $$z^@n@ = @z@.$$ Locate them on the complex plane. Show that they lie on a circle, and determine its radius. Also, find the angular distance between two adjacent roots."
 
     # Replace with actual numeric values
     expr = expr.replace('@n@', str(n)).replace('@z@', complex_in_latex(r_val**n, theta_index))
@@ -242,7 +242,7 @@ def Q2_get_graphing_question_equality(n: int, a: str, b: str) -> str:
     s = re.sub(r'(?<![A-Za-z])a(?![A-Za-z])', a, s)
     s = re.sub(r'(?<![A-Za-z])b(?![A-Za-z])', b, s)
 
-    return f"Describe the above locus $\\displaystyle {s}$ in the complex plane."
+    return f"Describe the locus $\\displaystyle {s}$ on the complex plane."
 
 
 
@@ -299,12 +299,12 @@ def Q3_get_graphing_question_inequality(n: int, a: str, b: str) -> str:
     s = re.sub(r'(?<![A-Za-z])a(?![A-Za-z])', a, s)
     s = re.sub(r'(?<![A-Za-z])b(?![A-Za-z])', b, s)
 
-    return f"Describe the above locus $\\displaystyle {s}$ in the complex plane."
+    return f"Describe the region $\\displaystyle {s}$ on the complex plane."
 
 
 def Q4_get_solve_trig(a: int, r_val: int, theta_index: int) -> str:
     arr = [
-        r"Solve the following equation for $z$: $$e^{@a@z}=@z@$$ Express $z$ as $x+iy$ where $x,y,\in \mathbb{R}$."
+        r"Solve the equation $$e^{@a@z}=@z@$$ for $z$ and express $z$ as $x+iy$ where $x,y,\in \mathbb{R}$."
     ]
 
     # Get selected LaTeX template
@@ -360,13 +360,13 @@ def Q6_get_solve_trig_hyp(n: int, a: int, b: int) -> str:
     expr = re.sub(r'\ba\b', str(a), expr)
     expr = expr.replace('b', str(b))
 
-    return f"Solve for $z$: \\[{expr}\\]"
+    return f"Solve for $z$ where \\[{expr}\\]"
 
 
 def Q7_get_limit_not_exists(n: int) -> str:
     arr = [
-        r"Using the definition of limit, show that $\displaystyle \lim_{z \to 0} \frac{\operatorname{Re}\{z^2\}}{|z|^2}$ does not exist.",
-        r"Using the definition of limit, show that $\displaystyle \lim_{z \to 0} \frac{\operatorname{Im}\{z^2\}}{|z|^2}$ does not exist."
+        r"Using the definition of a limit, show that $\displaystyle \lim_{z \to 0} \frac{\operatorname{Re}\{z^2\}}{|z|^2}$ does not exist.",
+        r"Using the definition of a limit, show that $\displaystyle \lim_{z \to 0} \frac{\operatorname{Im}\{z^2\}}{|z|^2}$ does not exist."
     ]
 
     # Get selected LaTeX template
@@ -377,8 +377,8 @@ def Q7_get_limit_not_exists(n: int) -> str:
 
 def Q8_get_limit_LHospital(n: int, a: int, b: int) -> str:
     arr = [
-        r"Using the L’Hospital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\sin z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} $$",
-        r"Using the L’Hospital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\tan z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} $$"
+        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\sin z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} $$",
+        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\tan z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} $$"
     ]
 
     # Get selected LaTeX template
@@ -408,8 +408,8 @@ def Q9_get_Continuity(a: int, b: int) -> str:
 
 def Q10_get_derivative(n: int, a: int, b: int, c: int) -> str:
     arr = [
-        r"Using the definition show that $$f(z)=@a@z^2 + @b@z - @c@$$ is differentiable at all points. Also find the derivative.",
-        r"Using the definition show that $$f(z)=@a@z\bar{z} - @b@z + @c@\bar{z}$$ is not differentiable at $z=0$."
+        r"Using the definition, show that $$f(z)=@a@z^2 + @b@z - @c@$$ is differentiable at all points. Also find the derivative.",
+        r"Using the definition, show that $$f(z)=@a@z\bar{z} - @b@z + @c@\bar{z}$$ is not differentiable at $z=0$."
     ]
 
     # Get selected LaTeX template
@@ -440,9 +440,9 @@ def Q11_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
 def Q12_get_analytic(n: int, a: int, b: int, c: int, d: int) -> str:
 
     arr = [
-        r"Consider the fuction $f(z)$ defined by \[ f(z) = @a@ \sin{(@b@z)} - @c@ \cosh{(@d@z)}\] Using C-R equations determine whether the function is analytic or not.",
+        r"Consider the function \[ f(z) = @a@ \sin{(@b@z)} - @c@ \cosh{(@d@z)}.\] Using the Cauchy–Riemann equations, determine whether the function is analytic.",
 
-        r"Consider the fuction $f(z)$ defined by \[ f(z) = @a@ \sinh{(@b@z)} - @c@ \cos{(@d@z)}\] Using C-R equations determine whether the function is analytic or not."
+        r"Consider the function \[ f(z) = @a@ \sinh{(@b@z)} - @c@ \cos{(@d@z)}.\] Using the Cauchy–Riemann equations, determine whether the function is analytic."
     ]
 
     # Get selected LaTeX template
@@ -457,9 +457,9 @@ def Q12_get_analytic(n: int, a: int, b: int, c: int, d: int) -> str:
 def Q13_get_analytic(n: int, a: int, b: int, c: int) -> str:
 
     arr = [
-        r"Consider the fuction $f(z)$ defined by \[ f(z) = @a@|z|^2 + @b@z - @c@\bar{z}\] Using C-R equations determine whether the function is analytic or not.",
+        r"Consider the function \[ f(z) = @a@|z|^2 + @b@z - @c@\bar{z}.\] Using the Cauchy–Riemann equations, determine whether the function is analytic.",
 
-        r"Consider the fuction $f(z)$ defined by \[ f(z) = @a@ze^{-@b@z}\] Using C-R equations determine whether the function is analytic or not."
+        r"Consider the function \[ f(z) = @a@ze^{-@b@z}.\] Using the Cauchy–Riemann equations, determine whether the function is analytic."
     ]
 
     # Get selected LaTeX template
@@ -475,13 +475,13 @@ def Q13_get_analytic(n: int, a: int, b: int, c: int) -> str:
 
 def Q14_get_harmonic(n: int, a: int, b: int, c: int, d: int, e: int, f: int, ) -> str:
     arr = [
-        r"Show that the given function \textbf{$u$} defined by \[ u(x,y) = @a@ e^{-@b@x}\cos{(@b@y)}- @c@ e^{@d@y}\sin{(@d@x)} + @3e@x^2y - @f@x^2 - @e@y^3 + @f@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{u+vi} becomes analytic.",
+        r"Show that the function \[ u(x,y) = @a@ e^{-@b@x}\cos{(@b@y)}- @c@ e^{@d@y}\sin{(@d@x)} + @3e@x^2y - @f@x^2 - @e@y^3 + @f@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{$u+vi$} becomes analytic.",
 
-        r"Show that the given function \textbf{$v$} defined by \[ v(x,y) = @a@ e^{-@b@x}\cos{(@b@y)}- @c@ e^{@d@y}\sin{(@d@x)} + @3e@x^2y - @f@x^2 - @e@y^3 + @f@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} such that \textbf{u+vi} becomes analytic.",
+        r"Show that the function \[ v(x,y) = @a@ e^{-@b@x}\cos{(@b@y)}- @c@ e^{@d@y}\sin{(@d@x)} + @3e@x^2y - @f@x^2 - @e@y^3 + @f@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} such that \textbf{$u+vi$} becomes analytic.",
 
-        r"Show that the given function \textbf{$u$} defined by \[ u(x,y) = @a@ \sin{(@b@x) \cosh{(@b@y)}} + @3c@x^2y - @d@x^2 - @c@y^3 + @d@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{u+vi} becomes analytic.",
+        r"Show that the function \[ u(x,y) = @a@ \sin{(@b@x) \cosh{(@b@y)}} + @3c@x^2y - @d@x^2 - @c@y^3 + @d@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{$u+vi$} becomes analytic.",
 
-        r"Show that the given function \textbf{$v$} defined by \[ v(x,y) = @a@ \sin{(@b@x) \cosh{(@b@y)}} + @3c@x^2y - @d@x^2 - @c@y^3 + @d@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} such that \textbf{u+vi} becomes analytic."
+        r"Show that the function \[ v(x,y) = @a@ \sin{(@b@x) \cosh{(@b@y)}} + @3c@x^2y - @d@x^2 - @c@y^3 + @d@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} such that \textbf{$u+vi$} becomes analytic."
     ]
 
     # Get selected LaTeX template
@@ -496,9 +496,9 @@ def Q14_get_harmonic(n: int, a: int, b: int, c: int, d: int, e: int, f: int, ) -
 def Q15_get_harmonic(n: int, a: int, b: int) -> str:
 
     arr = [
-        r"Show that the given function \textbf{$u$} defined by \[ u(x,y) = @a@ x e^{-@b@x}\cos{(@b@y)}+@a@ y e^{-@b@x}\sin{(@b@y)} \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{u+vi} becomes analytic.",
+        r"Show that the function \[ u(x,y) = @a@ x e^{-@b@x}\cos{(@b@y)}+@a@ y e^{-@b@x}\sin{(@b@y)} \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{$u+vi$} becomes analytic.",
 
-        r"Show that the given function \textbf{$v$} defined by \[ v(x,y) = @a@ x e^{-@b@x}\cos{(@b@y)}+@a@ y e^{-@b@x}\sin{(@b@y)} \] is harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} such that \textbf{u+vi} becomes analytic."
+        r"Show that the function \[ v(x,y) = @a@ x e^{-@b@x}\cos{(@b@y)}+@a@ y e^{-@b@x}\sin{(@b@y)} \] is harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} such that \textbf{$u+vi$} becomes analytic."
     ]
 
     # Get selected LaTeX template
