@@ -600,7 +600,7 @@ while True:
         CourseName=COURSE_NAME,
         CourseCode=COURSE_CODE,
         SemesterName=SEMESTER_NAME,
-        AssesmentType=ASSESSMENT_TYPE,
+        AssessmentType=ASSESSMENT_TYPE,
         TotalPoints=TOTAL_POINTS,
 
         Q1=Q1, Q2=Q2, Q3=Q3, Q4=Q4, Q5=Q5,
