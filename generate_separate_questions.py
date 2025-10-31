@@ -268,18 +268,18 @@ def Q5_get_prove_trig_hyp(n: int) -> str:
 
 def Q6_get_solve_trig_hyp(n: int, a: int, b: int) -> str:
     arr = [
-        r"\sin^{-1} z = a+bi",  r"\sin^{-1} z = a-bi",
-        r"\cos^{-1} z = a+bi",  r"\cos^{-1} z = a-bi",
-        r"\tan^{-1} z = a+bi",  r"\tan^{-1} z = a-bi",
-        r"\cosec^{-1} z = a+bi",  r"\cosec^{-1} z = a-bi",
-        r"\sec^{-1} z = a+bi",  r"\sec^{-1} z = a-bi",
-        r"\cot^{-1} z = a+bi",  r"\cot^{-1} z = a-bi",
-        r"\sinh^{-1} z = a+bi", r"\sinh^{-1} z = a-bi",
-        r"\cosh^{-1} z = a+bi", r"\cosh^{-1} z = a-bi",
-        r"\tanh^{-1} z = a+bi", r"\tanh^{-1} z = a-bi",
-        r"\cosech^{-1} z = a+bi", r"\cosech^{-1} z = a-bi",
-        r"\sech^{-1} z = a+bi", r"\sech^{-1} z = a-bi",
-        r"\coth^{-1} z = a+bi", r"\coth^{-1} z = a-bi",
+        r"\sin z = a+bi",  r"\sin z = a-bi",
+        r"\cos z = a+bi",  r"\cos z = a-bi",
+        r"\tan z = a+bi",  r"\tan z = a-bi",
+        r"\cosec z = a+bi",  r"\cosec z = a-bi",
+        r"\sec z = a+bi",  r"\sec z = a-bi",
+        r"\cot z = a+bi",  r"\cot z = a-bi",
+        r"\sinh z = a+bi", r"\sinh z = a-bi",
+        r"\cosh z = a+bi", r"\cosh z = a-bi",
+        r"\tanh z = a+bi", r"\tanh z = a-bi",
+        r"\cosech z = a+bi", r"\cosech z = a-bi",
+        r"\sech z = a+bi", r"\sech z = a-bi",
+        r"\coth z = a+bi", r"\coth z = a-bi",
     ]
     s = arr[n - 1]
     s = s.replace("a+b", f"{a}+{b}").replace("a-b", f"{a}-{b}")
@@ -392,24 +392,24 @@ def Q13_get_analytic(n: int, a: int, b: int, c: int) -> str:
 
 def Q14_get_harmonic(n: int, a: int, b: int, c: int, d: int, e: int, f: int) -> str:
     arr = [
-        r"Show that the function \[ u(x,y) = @a@ e^{-@b@x}\cos(@b@y)\;-\; "
+        r"Show that the function \[ U(x,y) = @a@ e^{-@b@x}\cos(@b@y)\;-\; "
         r"@c@ e^{@d@y}\sin(@d@x) \;+\; @3e@\,x^2y \;-\; @f@x^2 \;-\; @e@y^3 "
         r"\;+\; @f@y^2 \] is harmonic. Find the harmonic conjugate "
-        r"\textbf{$v$} of \textbf{$u$} such that \textbf{$u+vi$} becomes "
+        r"\textbf{$V$} of \textbf{$U$} such that \textbf{$U+Vi$} becomes "
         r"analytic.",
-        r"Show that the function \[ v(x,y) = @a@ e^{-@b@x}\cos(@b@y)\;-\; "
+        r"Show that the function \[ V(x,y) = @a@ e^{-@b@x}\cos(@b@y)\;-\; "
         r"@c@ e^{@d@y}\sin(@d@x) \;+\; @3e@\,x^2y \;-\; @f@x^2 \;-\; @e@y^3 "
         r"\;+\; @f@y^2 \] is harmonic. Find the harmonic conjugate "
-        r"\textbf{$u$} of \textbf{$v$} such that \textbf{$u+vi$} becomes "
+        r"\textbf{$U$} of \textbf{$V$} such that \textbf{$U+Vi$} becomes "
         r"analytic.",
-        r"Show that the function \[ u(x,y) = @a@ \sin(@b@x)\cosh(@b@y) "
+        r"Show that the function \[ U(x,y) = @a@ \sin(@b@x)\cosh(@b@y) "
         r"\;+\; @3c@\,x^2y \;-\; @d@x^2 \;-\; @c@y^3 \;+\; @d@y^2 \] is "
-        r"harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} "
-        r"such that \textbf{$u+vi$} becomes analytic.",
-        r"Show that the function \[ v(x,y) = @a@ \sin(@b@x)\cosh(@b@y) "
+        r"harmonic. Find the harmonic conjugate \textbf{$V$} of \textbf{$U$} "
+        r"such that \textbf{$U+Vi$} becomes analytic.",
+        r"Show that the function \[ V(x,y) = @a@ \sin(@b@x)\cosh(@b@y) "
         r"\;+\; @3c@\,x^2y \;-\; @d@x^2 \;-\; @c@y^3 \;+\; @d@y^2 \] is "
-        r"harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} "
-        r"such that \textbf{$u+vi$} becomes analytic.",
+        r"harmonic. Find the harmonic conjugate \textbf{$U$} of \textbf{$V$} "
+        r"such that \textbf{$U+Vi$} becomes analytic.",
     ]
     s = arr[n - 1]
     s = (
@@ -427,14 +427,8 @@ def Q14_get_harmonic(n: int, a: int, b: int, c: int, d: int, e: int, f: int) -> 
 
 def Q15_get_harmonic(n: int, a: int, b: int) -> str:
     arr = [
-        r"Show that the function \[ u(x,y) = @a@\, x e^{-@b@x}\cos(@b@y) "
-        r"\;+\; @a@\, y e^{-@b@x}\sin(@b@y) \] is harmonic. Find the "
-        r"harmonic conjugate \textbf{$v$} of \textbf{$u$} such that "
-        r"\textbf{$u+vi$} becomes analytic.",
-        r"Show that the function \[ v(x,y) = @a@\, x e^{-@b@x}\cos(@b@y) "
-        r"\;+\; @a@\, y e^{-@b@x}\sin(@b@y) \] is harmonic. Find the "
-        r"harmonic conjugate \textbf{$u$} of \textbf{$v$} such that "
-        r"\textbf{$u+vi$} becomes analytic.",
+        r"Show that the function \[ U(x,y) = @a@\, x e^{-@b@x}\cos(@b@y) + @a@\, y e^{-@b@x}\sin(@b@y) \] is harmonic. Find the harmonic conjugate \textbf{$V$} of \textbf{$U$} such that \textbf{$U+Vi$} becomes analytic.",
+        r"Show that the function \[ V(x,y) = @a@\, x e^{-@b@x}\cos(@b@y) + @a@\, y e^{-@b@x}\sin(@b@y) \] is harmonic. Find the harmonic conjugate \textbf{$U$} of \textbf{$V$} such that \textbf{$U+Vi$} becomes analytic."
     ]
     return arr[n - 1].replace("@a@", str(a)).replace("@b@", str(b))
 
