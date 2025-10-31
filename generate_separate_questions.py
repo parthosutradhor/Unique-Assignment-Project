@@ -369,6 +369,42 @@ def Q11_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
     return expr
 
 
+def Q12_get_analytic(n: int, a: int, b: int, c: int, d: int) -> str:
+
+    arr = [
+        r"Consider the fuction $f(z)$ defined by \[ f(z) = @a@ \sin{(@b@z)} - @c@ \cosh{(@d@z)}\] Using C-R equations determine whether the function is analytic or not.",
+
+        r"Consider the fuction $f(z)$ defined by \[ f(z) = @a@ \sinh{(@b@z)} - @c@ \cos{(@d@z)}\] Using C-R equations determine whether the function is analytic or not."
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    # Replace with actual numeric values
+    expr = expr.replace('@a@', str(a)).replace('@b@', str(b)).replace('@c@', str(c)).replace('@d@', str(d))
+
+    return expr
+
+
+def Q13_get_analytic(n: int, a: int, b: int, c: int) -> str:
+
+    arr = [
+        r"Consider the fuction $f(z)$ defined by \[ f(z) = @a@|z|^2 + @b@z - @c@\bar{z}\] Using C-R equations determine whether the function is analytic or not.",
+
+        r"Consider the fuction $f(z)$ defined by \[ f(z) = @a@ze^{-@b@z}\] Using C-R equations determine whether the function is analytic or not."
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    # Replace with actual numeric values
+    expr = expr.replace('@a@', str(a)).replace('@b@', str(b)).replace('@c@', str(c))
+
+    return expr
+
+
+
+
 def Q14_get_harmonic(n: int, a: int, b: int, c: int, d: int, e: int, f: int, ) -> str:
     arr = [
         r"Show that the given function \textbf{$u$} defined by \[ u(x,y) = @a@ e^{-@b@x}\cos{(@b@y)}- @c@ e^{@d@y}\sin{(@d@x)} + @3e@x^2y - @f@x^2 - @e@y^3 + @f@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{u+vi} becomes analytic.",
@@ -456,6 +492,10 @@ while True:
         Q10=Q10_get_derivative(generate_integers_range(ID, "Q10_n", 1, 1, 2)[0], generate_integers_range(ID, "Q10_a", 1, 2, 9)[0], generate_integers_range(ID, "Q10_b", 1, 2, 9)[0], generate_integers_range(ID, "Q10_c", 1, 2, 9)[0]),
 
         Q11=Q11_get_derivative(generate_integers_range(ID, "Q11_n", 1, 1, 3)[0], generate_integers_range(ID, "Q11_a", 1, 2, 9)[0], generate_integers_range(ID, "Q11_b", 1, 2, 9)[0], generate_integers_range(ID, "Q11_c", 1, 2, 9)[0], generate_integers_range(ID, "Q11_d", 1, 2, 9)[0]),
+
+        Q12=Q12_get_analytic(generate_integers_range(ID, "Q12_n", 1, 1, 2)[0], generate_integers_range(ID, "Q12_a", 1, 2, 9)[0], generate_integers_range(ID, "Q12_b", 1, 2, 9)[0], generate_integers_range(ID, "Q12_c", 1, 2, 9)[0], generate_integers_range(ID, "Q12_d", 1, 2, 9)[0]),
+
+        Q13=Q13_get_analytic(generate_integers_range(ID, "Q13_n", 1, 1, 2)[0], generate_integers_range(ID, "Q13_a", 1, 2, 9)[0], generate_integers_range(ID, "Q13_b", 1, 2, 9)[0], generate_integers_range(ID, "Q13_c", 1, 2, 9)[0]),
 
         Q14=Q14_get_harmonic(generate_integers_range(ID, "Q14_n", 1, 1, 4)[0], generate_integers_range(ID, "Q14_a", 1, 2, 9)[0], generate_integers_range(ID, "Q14_b", 1, 2, 9)[0], generate_integers_range(ID, "Q14_c", 1, 2, 9)[0], generate_integers_range(ID, "Q14_d", 1, 2, 9)[0], generate_integers_range(ID, "Q14_e", 1, 2, 9)[0], generate_integers_range(ID, "Q14_f", 1, 2, 9)[0]),
 
