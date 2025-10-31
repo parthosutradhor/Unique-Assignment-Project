@@ -369,6 +369,41 @@ def Q11_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
     return expr
 
 
+def Q14_get_harmonic(n: int, a: int, b: int, c: int, d: int, e: int, f: int, ) -> str:
+    arr = [
+        r"Show that the given function \textbf{$u$} defined by \[ u(x,y) = @a@ e^{-@b@x}\cos{(@b@y)}- @c@ e^{@d@y}\sin{(@d@x)} + @3e@x^2y - @f@x^2 - @e@y^3 + @f@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{u+vi} becomes analytic.",
+
+        r"Show that the given function \textbf{$v$} defined by \[ v(x,y) = @a@ e^{-@b@x}\cos{(@b@y)}- @c@ e^{@d@y}\sin{(@d@x)} + @3e@x^2y - @f@x^2 - @e@y^3 + @f@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} such that \textbf{u+vi} becomes analytic.",
+
+        r"Show that the given function \textbf{$u$} defined by \[ u(x,y) = @a@ \sin{(@b@x) \cosh{(@b@y)}} + @3c@x^2y - @d@x^2 - @c@y^3 + @d@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{u+vi} becomes analytic.",
+
+        r"Show that the given function \textbf{$v$} defined by \[ v(x,y) = @a@ \sin{(@b@x) \cosh{(@b@y)}} + @3c@x^2y - @d@x^2 - @c@y^3 + @d@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} such that \textbf{u+vi} becomes analytic."
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    # Replace with actual numeric values
+    expr = expr.replace('@a@', str(a)).replace('@b@', str(b)).replace('@c@', str(c)).replace('@d@', str(d)).replace('@e@', str(e)).replace('@f@', str(f)).replace('@3c@', str(3*c)).replace('@3e@', str(3*e))
+
+    return expr
+
+
+def Q15_get_harmonic(n: int, a: int, b: int) -> str:
+
+    arr = [
+        r"Show that the given function \textbf{$u$} defined by \[ u(x,y) = @a@ x e^{-@b@x}\cos{(@b@y)}+@a@ y e^{-@b@x}\sin{(@b@y)} \] is harmonic. Find the harmonic conjugate \textbf{$v$} of \textbf{$u$} such that \textbf{u+vi} becomes analytic.",
+
+        r"Show that the given function \textbf{$v$} defined by \[ v(x,y) = @a@ x e^{-@b@x}\cos{(@b@y)}+@a@ y e^{-@b@x}\sin{(@b@y)} \] is harmonic. Find the harmonic conjugate \textbf{$u$} of \textbf{$v$} such that \textbf{u+vi} becomes analytic."
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    # Replace with actual numeric values
+    expr = expr.replace('@a@', str(a)).replace('@b@', str(b))
+
+    return expr
 
 
 
@@ -420,7 +455,11 @@ while True:
 
         Q10=Q10_get_derivative(generate_integers_range(ID, "Q10_n", 1, 1, 2)[0], generate_integers_range(ID, "Q10_a", 1, 2, 9)[0], generate_integers_range(ID, "Q10_b", 1, 2, 9)[0], generate_integers_range(ID, "Q10_c", 1, 2, 9)[0]),
 
-        Q11=Q11_get_derivative(generate_integers_range(ID, "Q11_n", 1, 1, 3)[0], generate_integers_range(ID, "Q11_a", 1, 2, 9)[0], generate_integers_range(ID, "Q11_b", 1, 2, 9)[0], generate_integers_range(ID, "Q11_c", 1, 2, 9)[0], generate_integers_range(ID, "Q11_d", 1, 2, 9)[0])
+        Q11=Q11_get_derivative(generate_integers_range(ID, "Q11_n", 1, 1, 3)[0], generate_integers_range(ID, "Q11_a", 1, 2, 9)[0], generate_integers_range(ID, "Q11_b", 1, 2, 9)[0], generate_integers_range(ID, "Q11_c", 1, 2, 9)[0], generate_integers_range(ID, "Q11_d", 1, 2, 9)[0]),
+
+        Q14=Q14_get_harmonic(generate_integers_range(ID, "Q14_n", 1, 1, 4)[0], generate_integers_range(ID, "Q14_a", 1, 2, 9)[0], generate_integers_range(ID, "Q14_b", 1, 2, 9)[0], generate_integers_range(ID, "Q14_c", 1, 2, 9)[0], generate_integers_range(ID, "Q14_d", 1, 2, 9)[0], generate_integers_range(ID, "Q14_e", 1, 2, 9)[0], generate_integers_range(ID, "Q14_f", 1, 2, 9)[0]),
+
+        Q15=Q15_get_harmonic(generate_integers_range(ID, "Q15_n", 1, 1, 2)[0], generate_integers_range(ID, "Q15_a", 1, 2, 9)[0], generate_integers_range(ID, "Q15_b", 1, 2, 9)[0])
     )
 
 
