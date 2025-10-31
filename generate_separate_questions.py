@@ -338,6 +338,49 @@ def get_solve_trig_hyp(n: int, a: int, b: int) -> str:
     return expr
 
 
+def Q7_get_limit_not_exists(n: int) -> str:
+    arr = [
+        r"Show that the limit, $\displaystyle \lim_{z \to 0} \frac{\operatorname{Re}\{z^2\}}{|z|^2}$ does not exist.",
+        r"Show that the limit, $\displaystyle \lim_{z \to 0} \frac{\operatorname{Im}\{z^2\}}{|z|^2}$ does not exist."
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    return expr
+
+
+def Q8_get_limit_LHospital(n: int, a: int, b: int) -> str:
+    arr = [
+        r"Using the L’Hospital’s rule, evaluate \[ \lim_{z \to 0} \left( \frac{\sin z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} \]",
+        r"Using the L’Hospital’s rule, evaluate \[ \lim_{z \to 0} \left( \frac{\tan z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} \]"
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    # Replace with actual numeric values
+    expr = expr.replace('@a@', str(a)).replace('@b@', str(b))
+
+    return expr
+
+
+def Q9_get_Continuity(n: int, a: int, b: int) -> str:
+    arr = [
+        r"Consider the function\[f(z) = \frac{\tan @a@z}{@b@z}.\] \noindent Is \( f(z) \) continuous at \( z = 0 \)?  If not, redefine \( f \) at \( z = 0 \) so that \( f(z) \) becomes continuous.  Also, find all the points of discontinuity of \(f(z)\)."
+    ]
+
+    # Get selected LaTeX template
+    expr = arr[n-1]
+
+    # Replace with actual numeric values
+    expr = expr.replace('@a@', str(a)).replace('@b@', str(b))
+
+    return expr
+
+
+
+
 def Q10_get_derivative(n: int, a: int, b: int, c: int) -> str:
     arr = [
         r"Using the definition show that $$f(z)=@a@z^2 + @b@z - @c@$$ is differentiable at all points. Also find the derivative.",
@@ -488,6 +531,12 @@ while True:
         Q5_expression=get_prove_trig_hyp(generate_integers_range(ID, "Q5_n", 1, 1, 12)[0]),
 
         Q6_expression=get_solve_trig_hyp(generate_integers_range(ID, "Q6_n", 1, 1, 24)[0], generate_integers_range(ID, "Q6_a", 1, 2, 9)[0], generate_integers_range(ID, "Q6_b", 1, 2, 9)[0]),
+
+        Q7=Q7_get_limit_not_exists(generate_integers_range(ID, "Q7_n", 1, 1, 2)[0]),
+
+        Q8=Q8_get_limit_LHospital(generate_integers_range(ID, "Q8_n", 1, 1, 2)[0], generate_integers_range(ID, "Q8_a", 1, 2, 9)[0], generate_integers_range(ID, "Q8_b", 1, 2, 9)[0]),
+
+        Q9=Q9_get_Continuity(generate_integers_range(ID, "Q9_n", 1, 1, 1)[0], generate_integers_range(ID, "Q9_a", 1, 2, 9)[0], generate_integers_range(ID, "Q9_b", 1, 2, 9)[0]),
 
         Q10=Q10_get_derivative(generate_integers_range(ID, "Q10_n", 1, 1, 2)[0], generate_integers_range(ID, "Q10_a", 1, 2, 9)[0], generate_integers_range(ID, "Q10_b", 1, 2, 9)[0], generate_integers_range(ID, "Q10_c", 1, 2, 9)[0]),
 
