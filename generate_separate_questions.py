@@ -18,7 +18,7 @@ SEMESTER_NAME = "FALL 2025"
 COURSE_CODE = "MAT215"
 COURSE_NAME = r"Complex Variables \& Laplace Transform"
 SECTION = "12"
-TOTAL_POINTS="100"
+TOTAL_POINTS="150"
 
 TEMPLATE_PATH = "question_template.tex"
 WORKBOOK_PATH = "course-attendee.xlsx"
@@ -192,7 +192,19 @@ def complex_in_latex(r_val, theta_index):
     return f"{latex_expr}"
 
 
-def get_graphing_question_equality(n: int, a: str, b: str) -> str:
+
+def Q1_get_nth_root(n: int, r_val: int, theta_index: int) -> str:
+
+    # Get the LaTeX template
+    expr = r"Find all possible values of $z$ such that $$z^@n@ = @z@$$ Locate them in the complex plane. Show that they are contained in a circle and find the radius of that circle. Also find the angular distance between two adjacent roots."
+
+    # Replace with actual numeric values
+    expr = expr.replace('@n@', str(n)).replace('@z@', complex_in_latex(r_val**n, theta_index))
+
+    return expr
+
+
+def Q2_get_graphing_question_equality(n: int, a: str, b: str) -> str:
     arr = [
         r'\left|\frac{z+ai}{z-ai}\right|=b',
         r'|z+a|+|z-a|=2a+b',
@@ -230,12 +242,12 @@ def get_graphing_question_equality(n: int, a: str, b: str) -> str:
     s = re.sub(r'(?<![A-Za-z])a(?![A-Za-z])', a, s)
     s = re.sub(r'(?<![A-Za-z])b(?![A-Za-z])', b, s)
 
-    return f"{s}"
+    return f"Describe the above locus $\\displaystyle {s}$ in the complex plane."
 
 
 
 
-def get_graphing_question_inequality(n: int, a: str, b: str) -> str:
+def Q3_get_graphing_question_inequality(n: int, a: str, b: str) -> str:
     arr = [
         r'\left|\frac{z+ai}{z-ai}\right| < b',
         r'\left|\frac{z+ai}{z-ai}\right| > b',
@@ -287,11 +299,24 @@ def get_graphing_question_inequality(n: int, a: str, b: str) -> str:
     s = re.sub(r'(?<![A-Za-z])a(?![A-Za-z])', a, s)
     s = re.sub(r'(?<![A-Za-z])b(?![A-Za-z])', b, s)
 
-    return f"{s}"
+    return f"Describe the above locus $\\displaystyle {s}$ in the complex plane."
 
 
+def Q4_get_solve_trig(a: int, r_val: int, theta_index: int) -> str:
+    arr = [
+        r"Solve the following equation for $z$: $$e^{@a@z}=@z@$$ Express $z$ as $x+iy$ where $x,y,\in \mathbb{R}$."
+    ]
 
-def get_prove_trig_hyp(n: int) -> str:
+    # Get selected LaTeX template
+    expr = arr[0]
+
+    # Replace with actual numeric values
+    expr = expr.replace('@a@', str(a)).replace('@z@', complex_in_latex(r_val, theta_index))
+
+    return expr
+
+
+def Q5_get_prove_trig_hyp(n: int) -> str:
     arr = [
     r"\sin^{-1} z = \frac{1}{i} \ln \left( iz + \sqrt{1 - z^2} \right),",
     r"\cos^{-1} z = \frac{1}{i} \ln \left( z + \sqrt{z^2 - 1} \right),",
@@ -308,11 +333,11 @@ def get_prove_trig_hyp(n: int) -> str:
     r"\coth^{-1} z = \frac{1}{2} \ln \left( \frac{z + 1}{z - 1} \right)."
     ]
 
-    s=arr[n-1]
-    return f"{s}"
+    expr=arr[n-1]
+    return f"Prove that $${expr}$$"
 
 
-def get_solve_trig_hyp(n: int, a: int, b: int) -> str:
+def Q6_get_solve_trig_hyp(n: int, a: int, b: int) -> str:
     arr = [
         r"\sin^{-1} z = a+bi",  r"\sin^{-1} z = a-bi",
         r"\cos^{-1} z = a+bi",  r"\cos^{-1} z = a-bi",
@@ -335,13 +360,13 @@ def get_solve_trig_hyp(n: int, a: int, b: int) -> str:
     expr = re.sub(r'\ba\b', str(a), expr)
     expr = expr.replace('b', str(b))
 
-    return expr
+    return f"Solve for $z$: \\[{expr}\\]"
 
 
 def Q7_get_limit_not_exists(n: int) -> str:
     arr = [
-        r"Show that the limit, $\displaystyle \lim_{z \to 0} \frac{\operatorname{Re}\{z^2\}}{|z|^2}$ does not exist.",
-        r"Show that the limit, $\displaystyle \lim_{z \to 0} \frac{\operatorname{Im}\{z^2\}}{|z|^2}$ does not exist."
+        r"Using the definition of limit, show that $\displaystyle \lim_{z \to 0} \frac{\operatorname{Re}\{z^2\}}{|z|^2}$ does not exist.",
+        r"Using the definition of limit, show that $\displaystyle \lim_{z \to 0} \frac{\operatorname{Im}\{z^2\}}{|z|^2}$ does not exist."
     ]
 
     # Get selected LaTeX template
@@ -352,8 +377,8 @@ def Q7_get_limit_not_exists(n: int) -> str:
 
 def Q8_get_limit_LHospital(n: int, a: int, b: int) -> str:
     arr = [
-        r"Using the L’Hospital’s rule, evaluate \[ \lim_{z \to 0} \left( \frac{\sin z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} \]",
-        r"Using the L’Hospital’s rule, evaluate \[ \lim_{z \to 0} \left( \frac{\tan z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} \]"
+        r"Using the L’Hospital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\sin z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} $$",
+        r"Using the L’Hospital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\tan z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} $$"
     ]
 
     # Get selected LaTeX template
@@ -365,13 +390,13 @@ def Q8_get_limit_LHospital(n: int, a: int, b: int) -> str:
     return expr
 
 
-def Q9_get_Continuity(n: int, a: int, b: int) -> str:
+def Q9_get_Continuity(a: int, b: int) -> str:
     arr = [
         r"Consider the function\[f(z) = \frac{\tan @a@z}{@b@z}.\] \noindent Is \( f(z) \) continuous at \( z = 0 \)?  If not, redefine \( f \) at \( z = 0 \) so that \( f(z) \) becomes continuous.  Also, find all the points of discontinuity of \(f(z)\)."
     ]
 
     # Get selected LaTeX template
-    expr = arr[n-1]
+    expr = arr[0]
 
     # Replace with actual numeric values
     expr = expr.replace('@a@', str(a)).replace('@b@', str(b))
@@ -398,9 +423,9 @@ def Q10_get_derivative(n: int, a: int, b: int, c: int) -> str:
 
 def Q11_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
     arr = [
-        r"Using the definition, find the derivative of \[f(z) = \frac{@a@z-@b@}{@c@z+@d@i} \quad \text{at} \quad z = i\].",
-        r"Using the definition, find the derivative of \[f(z) = \frac{@a@}{@b@z + @c@} \quad \text{at} \quad z = z_0\].",
-        r"Using the definition, find the derivative of \[f(z) = \frac{@a@}{z^2} \quad \text{at} \quad z = @b@+@c@i\]."
+        r"Using the definition, find the derivative of $ \displaystyle f(z) = \frac{@a@z-@b@}{@c@z+@d@i} \quad \text{at} \quad z = i$.",
+        r"Using the definition, find the derivative of $ \displaystyle f(z) = \frac{@a@}{@b@z + @c@} \quad \text{at} \quad z = z_0$.",
+        r"Using the definition, find the derivative of $ \displaystyle f(z) = \frac{@a@}{z^2} \quad \text{at} \quad z = @b@+@c@i$."
     ]
 
     # Get selected LaTeX template
@@ -511,32 +536,29 @@ while True:
         Name=Name,
         ID=ID,
         Section=SECTION,
-        Course_Name=COURSE_NAME,
-        Course_Code=COURSE_CODE,
-        Semester_Name=SEMESTER_NAME,
-        Assesment_Type=ASSESSMENT_TYPE,
-        Total_Points=TOTAL_POINTS,
-        
-        Q1_n=generate_integers_range(ID, "Q1_n", 1, 5, 7)[0],
-        Q1_z=complex_in_latex((generate_integers_range(ID, "Q1_r", 1, 2, 3)[0])**(generate_integers_range(ID, "Q1_n", 1, 5, 7)[0]), generate_integers_range(ID, "Q1_arg", 1, 0, 15)[0]),
+        CourseName=COURSE_NAME,
+        CourseCode=COURSE_CODE,
+        SemesterName=SEMESTER_NAME,
+        AssesmentType=ASSESSMENT_TYPE,
+        TotalPoints=TOTAL_POINTS,
 
-        graph_equation=get_graphing_question_equality(generate_integers_range(ID, "Q2_n", 1, 1, 5)[0], str(generate_integers_range(ID, "Q2_a", 1, 4, 9)[0],), str(generate_integers_range(ID, "Q2_b", 1, 1, 7)[0],)),
+        Q1=Q1_get_nth_root(generate_integers_range(ID, "Q1_n", 1, 5, 7)[0], generate_integers_range(ID, "Q1_r", 1, 2, 3)[0], generate_integers_range(ID, "Q1_arg", 1, 0, 15)[0]),
 
-        graph_inequality=get_graphing_question_inequality(generate_integers_range(ID, "Q3_n", 1, 1, 20)[0], str(generate_integers_range(ID, "Q3_a", 1, 4, 9)[0],), str(generate_integers_range(ID, "Q3_b", 1, 1, 7)[0],)),
+        Q2=Q2_get_graphing_question_equality(generate_integers_range(ID, "Q2_n", 1, 1, 5)[0], str(generate_integers_range(ID, "Q2_a", 1, 4, 9)[0],), str(generate_integers_range(ID, "Q2_b", 1, 1, 7)[0],)),
 
-        Q4_a=generate_integers_range(ID, "Q4_a", 1, 2, 9)[0],
+        Q3=Q3_get_graphing_question_inequality(generate_integers_range(ID, "Q3_n", 1, 1, 20)[0], str(generate_integers_range(ID, "Q3_a", 1, 4, 9)[0],), str(generate_integers_range(ID, "Q3_b", 1, 1, 7)[0],)),
 
-        Q4_z=complex_in_latex(generate_integers_range(ID, "Q4_r", 1, 2, 9)[0], generate_integers_range(ID, "Q4_arg", 1, 0, 15)[0]),
+        Q4=Q4_get_solve_trig(generate_integers_range(ID, "Q4_a", 1, 2, 9)[0], generate_integers_range(ID, "Q4_r", 1, 2, 9)[0], generate_integers_range(ID, "Q4_arg", 1, 0, 15)[0]),
 
-        Q5_expression=get_prove_trig_hyp(generate_integers_range(ID, "Q5_n", 1, 1, 12)[0]),
+        Q5=Q5_get_prove_trig_hyp(generate_integers_range(ID, "Q5_n", 1, 1, 12)[0]),
 
-        Q6_expression=get_solve_trig_hyp(generate_integers_range(ID, "Q6_n", 1, 1, 24)[0], generate_integers_range(ID, "Q6_a", 1, 2, 9)[0], generate_integers_range(ID, "Q6_b", 1, 2, 9)[0]),
+        Q6=Q6_get_solve_trig_hyp(generate_integers_range(ID, "Q6_n", 1, 1, 24)[0], generate_integers_range(ID, "Q6_a", 1, 2, 9)[0], generate_integers_range(ID, "Q6_b", 1, 2, 9)[0]),
 
         Q7=Q7_get_limit_not_exists(generate_integers_range(ID, "Q7_n", 1, 1, 2)[0]),
 
         Q8=Q8_get_limit_LHospital(generate_integers_range(ID, "Q8_n", 1, 1, 2)[0], generate_integers_range(ID, "Q8_a", 1, 2, 9)[0], generate_integers_range(ID, "Q8_b", 1, 2, 9)[0]),
 
-        Q9=Q9_get_Continuity(generate_integers_range(ID, "Q9_n", 1, 1, 1)[0], generate_integers_range(ID, "Q9_a", 1, 2, 9)[0], generate_integers_range(ID, "Q9_b", 1, 2, 9)[0]),
+        Q9=Q9_get_Continuity(generate_integers_range(ID, "Q9_a", 1, 2, 9)[0], generate_integers_range(ID, "Q9_b", 1, 2, 9)[0]),
 
         Q10=Q10_get_derivative(generate_integers_range(ID, "Q10_n", 1, 1, 2)[0], generate_integers_range(ID, "Q10_a", 1, 2, 9)[0], generate_integers_range(ID, "Q10_b", 1, 2, 9)[0], generate_integers_range(ID, "Q10_c", 1, 2, 9)[0]),
 
