@@ -179,9 +179,7 @@ def Q1_get_nth_root(n: int, r_val: int, theta_index: int) -> str:
     return (
         r"Find all possible values of $z$ satisfying "
         rf"$$z^{{{n}}} = {rhs}.$$ "
-        r"Locate them on the complex plane. Show that they lie on a circle, "
-        r"and determine its radius. Also, find the angular distance between "
-        r"two adjacent roots."
+        r"Locate them on the complex plane. Show that they lie on a circle, and determine its radius. Also, find the angular distance between two adjacent roots."
     )
 
 
@@ -249,21 +247,21 @@ def Q4_get_solve_trig(a: int, r_val: int, theta_index: int) -> str:
 
 def Q5_get_prove_trig_hyp(n: int) -> str:
     arr = [
-        r"\sin^{-1} z = \frac{1}{i}\,\ln\!\big( iz + \sqrt{1 - z^2} \big),",
-        r"\cos^{-1} z = \frac{1}{i}\,\ln\!\big( z + \sqrt{z^2 - 1} \big),",
-        r"\tan^{-1} z = \frac{1}{2i}\,\ln\!\left( \frac{1 + iz}{1 - iz} \right),",
-        r"\cosec^{-1} z = \frac{1}{i}\,\ln\!\left( \frac{i + \sqrt{z^2 - 1}}{z} \right),",
-        r"\sec^{-1} z = \frac{1}{i}\,\ln\!\left( \frac{1 + \sqrt{1 - z^2}}{z} \right),",
-        r"\cot^{-1} z = \frac{1}{2i}\,\ln\!\left( \frac{z + i}{z - i} \right),",
-        r"\sinh^{-1} z = \ln\!\big( z + \sqrt{z^2 + 1} \big),",
-        r"\cosh^{-1} z = \ln\!\big( z + \sqrt{z^2 - 1} \big),",
-        r"\tanh^{-1} z = \frac{1}{2}\,\ln\!\left( \frac{1 + z}{1 - z} \right),",
-        r"\cosech^{-1} z = \ln\!\left( \frac{1 + \sqrt{z^2 + 1}}{z} \right),",
-        r"\sech^{-1} z = \ln\!\left( \frac{1 + \sqrt{1 - z^2}}{z} \right),",
-        r"\coth^{-1} z = \frac{1}{2}\,\ln\!\left( \frac{z + 1}{z - 1} \right).",
+        r"\sin^{-1} z = \frac{1}{i}\,\ln\!\big( iz + \sqrt{1 - z^2} \big)",
+        r"\cos^{-1} z = \frac{1}{i}\,\ln\!\big( z + \sqrt{z^2 - 1} \big)",
+        r"\tan^{-1} z = \frac{1}{2i}\,\ln\!\left( \frac{1 + iz}{1 - iz} \right)",
+        r"\cosec^{-1} z = \frac{1}{i}\,\ln\!\left( \frac{i + \sqrt{z^2 - 1}}{z} \right)",
+        r"\sec^{-1} z = \frac{1}{i}\,\ln\!\left( \frac{1 + \sqrt{1 - z^2}}{z} \right)",
+        r"\cot^{-1} z = \frac{1}{2i}\,\ln\!\left( \frac{z + i}{z - i} \right)",
+        r"\sinh^{-1} z = \ln\!\big( z + \sqrt{z^2 + 1} \big)",
+        r"\cosh^{-1} z = \ln\!\big( z + \sqrt{z^2 - 1} \big)",
+        r"\tanh^{-1} z = \frac{1}{2}\,\ln\!\left( \frac{1 + z}{1 - z} \right)",
+        r"\cosech^{-1} z = \ln\!\left( \frac{1 + \sqrt{z^2 + 1}}{z} \right)",
+        r"\sech^{-1} z = \ln\!\left( \frac{1 + \sqrt{1 - z^2}}{z} \right)",
+        r"\coth^{-1} z = \frac{1}{2}\,\ln\!\left( \frac{z + 1}{z - 1} \right)",
     ]
     s = arr[n - 1]
-    return fr"Prove that $${s}$$"
+    return fr"Prove that $${s}.$$"
 
 
 def Q6_get_solve_trig_hyp(n: int, a: int, b: int) -> str:
@@ -283,25 +281,21 @@ def Q6_get_solve_trig_hyp(n: int, a: int, b: int) -> str:
     ]
     s = arr[n - 1]
     s = s.replace("a+b", f"{a}+{b}").replace("a-b", f"{a}-{b}")
-    return rf"Solve for $z$ where \[{s}\]"
+    return rf"Solve for $z$ where \[{s}.\]"
 
 
 def Q7_get_limit_not_exists(n: int) -> str:
     arr = [
-        r"Using the definition of a limit, show that $\displaystyle "
-        r"\lim_{z \to 0} \frac{\operatorname{Re}(z^2)}{|z|^2}$ does not exist.",
-        r"Using the definition of a limit, show that $\displaystyle "
-        r"\lim_{z \to 0} \frac{\operatorname{Im}(z^2)}{|z|^2}$ does not exist.",
+        r"Using the definition of a limit, show that $\displaystyle \lim_{z \to 0} \frac{\operatorname{Re}(z^2)}{|z|^2}$ does not exist.",
+        r"Using the definition of a limit, show that $\displaystyle \lim_{z \to 0} \frac{\operatorname{Im}(z^2)}{|z|^2}$ does not exist.",
     ]
     return arr[n - 1]
 
 
 def Q8_get_limit_LHopital(n: int, a: int, b: int) -> str:
     arr = [
-        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( "
-        r"\frac{\sin z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} $$",
-        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( "
-        r"\frac{\tan z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}} $$",
+        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\sin z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}}.$$",
+        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\tan z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}}.$$",
     ]
     s = arr[n - 1]
     s = s.replace("@a@", str(a)).replace("@b@", str(b))
@@ -311,20 +305,15 @@ def Q8_get_limit_LHopital(n: int, a: int, b: int) -> str:
 def Q9_get_Continuity(a: int, b: int) -> str:
     return (
         r"Consider the function "
-        rf"\[f(z) = \frac{{\tan {a}z}}{{{b}z}}\]. "
-        r"Is \( f(z) \) continuous at \( z = 0 \)? "
-        r"If not, redefine \( f \) at \( z = 0 \) so that \( f(z) \) becomes "
-        r"continuous. Also, find all points of discontinuity of \(f(z)\)."
+        rf"\[f(z) = \frac{{\tan {a}z}}{{{b}z}}.\]"
+        r"Is \( f(z) \) continuous at \( z = 0 \)? If not, redefine \( f \) at \( z = 0 \) so that \( f(z) \) becomes continuous. Also, find all points of discontinuity of \(f(z)\)."
     )
 
 
 def Q10_get_derivative(n: int, a: int, b: int, c: int) -> str:
     arr = [
-        r"Using the definition, show that $$f(z)=@a@z^2 + @b@z - @c@$$ "
-        r"is differentiable at all points. Also find the derivative.",
-        r"Using the definition, show that "
-        r"$$f(z)=@a@z\bar{z} - @b@z + @c@\bar{z}$$ "
-        r"is not differentiable at $z=0$.",
+        r"Using the definition, show that $$f(z)=@a@z^2 + @b@z - @c@$$ is differentiable at all points. Also find the derivative.",
+        r"Using the definition, show that $$f(z)=@a@z\bar{z} - @b@z + @c@\bar{z}$$ is not differentiable at $z=0$.",
     ]
     s = arr[n - 1]
     s = s.replace("@a@", str(a)).replace("@b@", str(b)).replace("@c@", str(c))
@@ -333,15 +322,9 @@ def Q10_get_derivative(n: int, a: int, b: int, c: int) -> str:
 
 def Q11_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
     arr = [
-        r"Using the definition, find the derivative of "
-        r"$ \displaystyle f(z) = \frac{@a@z-@b@}{@c@z+@d@i} \quad "
-        r"\text{at} \quad z = i$.",
-        r"Using the definition, find the derivative of "
-        r"$ \displaystyle f(z) = \frac{@a@}{@b@z + @c@} \quad "
-        r"\text{at} \quad z = z_0$.",
-        r"Using the definition, find the derivative of "
-        r"$ \displaystyle f(z) = \frac{@a@}{z^2} \quad "
-        r"\text{at} \quad z = @b@+@c@i$.",
+        r"Using the definition, find the derivative of $ \displaystyle f(z) = \frac{@a@z-@b@}{@c@z+@d@i} \quad \text{at} \quad z = i$.",
+        r"Using the definition, find the derivative of $ \displaystyle f(z) = \frac{@a@}{@b@z + @c@} \quad \text{at} \quad z = z_0$.",
+        r"Using the definition, find the derivative of $ \displaystyle f(z) = \frac{@a@}{z^2} \quad \text{at} \quad z = @b@+@c@i$.",
     ]
     s = arr[n - 1]
     s = (
@@ -355,12 +338,8 @@ def Q11_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
 
 def Q12_get_analytic(n: int, a: int, b: int, c: int, d: int) -> str:
     arr = [
-        r"Consider the function \[ f(z) = @a@ \sin(@b@z) - @c@ \cosh(@d@z).\] "
-        r"Using the Cauchy–Riemann equations, determine whether the function "
-        r"is analytic.",
-        r"Consider the function \[ f(z) = @a@ \sinh(@b@z) - @c@ \cos(@d@z).\] "
-        r"Using the Cauchy–Riemann equations, determine whether the function "
-        r"is analytic.",
+        r"Consider the function \[ f(z) = @a@ \sin(@b@z) - @c@ \cosh(@d@z).\] Using the Cauchy–Riemann equations, determine whether the function is analytic.",
+        r"Consider the function \[ f(z) = @a@ \sinh(@b@z) - @c@ \cos(@d@z).\] Using the Cauchy–Riemann equations, determine whether the function is analytic.",
     ]
     s = arr[n - 1]
     s = (
@@ -374,12 +353,8 @@ def Q12_get_analytic(n: int, a: int, b: int, c: int, d: int) -> str:
 
 def Q13_get_analytic(n: int, a: int, b: int, c: int) -> str:
     arr = [
-        r"Consider the function \[ f(z) = @a@|z|^2 + @b@z - @c@\bar{z}.\] "
-        r"Using the Cauchy–Riemann equations, determine whether the function "
-        r"is analytic.",
-        r"Consider the function \[ f(z) = @a@ze^{-@b@z}.\] Using the "
-        r"Cauchy–Riemann equations, determine whether the function is "
-        r"analytic.",
+        r"Consider the function \[ f(z) = @a@|z|^2 + @b@z - @c@\bar{z}.\] Using the Cauchy–Riemann equations, determine whether the function is analytic.",
+        r"Consider the function \[ f(z) = @a@ze^{-@b@z}.\] Using the Cauchy–Riemann equations, determine whether the function is analytic.",
     ]
     s = arr[n - 1]
     s = (
@@ -392,24 +367,13 @@ def Q13_get_analytic(n: int, a: int, b: int, c: int) -> str:
 
 def Q14_get_harmonic(n: int, a: int, b: int, c: int, d: int, e: int, f: int) -> str:
     arr = [
-        r"Show that the function \[ U(x,y) = @a@ e^{-@b@x}\cos(@b@y)\;-\; "
-        r"@c@ e^{@d@y}\sin(@d@x) \;+\; @3e@\,x^2y \;-\; @f@x^2 \;-\; @e@y^3 "
-        r"\;+\; @f@y^2 \] is harmonic. Find the harmonic conjugate "
-        r"\textbf{$V$} of \textbf{$U$} such that \textbf{$U+Vi$} becomes "
-        r"analytic.",
-        r"Show that the function \[ V(x,y) = @a@ e^{-@b@x}\cos(@b@y)\;-\; "
-        r"@c@ e^{@d@y}\sin(@d@x) \;+\; @3e@\,x^2y \;-\; @f@x^2 \;-\; @e@y^3 "
-        r"\;+\; @f@y^2 \] is harmonic. Find the harmonic conjugate "
-        r"\textbf{$U$} of \textbf{$V$} such that \textbf{$U+Vi$} becomes "
-        r"analytic.",
-        r"Show that the function \[ U(x,y) = @a@ \sin(@b@x)\cosh(@b@y) "
-        r"\;+\; @3c@\,x^2y \;-\; @d@x^2 \;-\; @c@y^3 \;+\; @d@y^2 \] is "
-        r"harmonic. Find the harmonic conjugate \textbf{$V$} of \textbf{$U$} "
-        r"such that \textbf{$U+Vi$} becomes analytic.",
-        r"Show that the function \[ V(x,y) = @a@ \sin(@b@x)\cosh(@b@y) "
-        r"\;+\; @3c@\,x^2y \;-\; @d@x^2 \;-\; @c@y^3 \;+\; @d@y^2 \] is "
-        r"harmonic. Find the harmonic conjugate \textbf{$U$} of \textbf{$V$} "
-        r"such that \textbf{$U+Vi$} becomes analytic.",
+        r"Show that the function \[ U(x,y) = @a@ e^{-@b@x}\cos(@b@y)\;-\; @c@ e^{@d@y}\sin(@d@x) \;+\; @3e@\,x^2y \;-\; @f@x^2 \;-\; @e@y^3 \;+\; @f@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$V$} of \textbf{$U$} such that \textbf{$U+Vi$} becomes analytic.",
+
+        r"Show that the function \[ V(x,y) = @a@ e^{-@b@x}\cos(@b@y)\;-\; @c@ e^{@d@y}\sin(@d@x) \;+\; @3e@\,x^2y \;-\; @f@x^2 \;-\; @e@y^3 \;+\; @f@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$U$} of \textbf{$V$} such that \textbf{$U+Vi$} becomes analytic.",
+
+        r"Show that the function \[ U(x,y) = @a@ \sin(@b@x)\cosh(@b@y) \;+\; @3c@\,x^2y \;-\; @d@x^2 \;-\; @c@y^3 \;+\; @d@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$V$} of \textbf{$U$} such that \textbf{$U+Vi$} becomes analytic.",
+
+        r"Show that the function \[ V(x,y) = @a@ \sin(@b@x)\cosh(@b@y) \;+\; @3c@\,x^2y \;-\; @d@x^2 \;-\; @c@y^3 \;+\; @d@y^2 \] is harmonic. Find the harmonic conjugate \textbf{$U$} of \textbf{$V$} such that \textbf{$U+Vi$} becomes analytic.",
     ]
     s = arr[n - 1]
     s = (
@@ -427,8 +391,9 @@ def Q14_get_harmonic(n: int, a: int, b: int, c: int, d: int, e: int, f: int) -> 
 
 def Q15_get_harmonic(n: int, a: int, b: int) -> str:
     arr = [
-        r"Show that the function \[ U(x,y) = @a@\, x e^{-@b@x}\cos(@b@y) + @a@\, y e^{-@b@x}\sin(@b@y) \] is harmonic. Find the harmonic conjugate \textbf{$V$} of \textbf{$U$} such that \textbf{$U+Vi$} becomes analytic.",
-        r"Show that the function \[ V(x,y) = @a@\, x e^{-@b@x}\cos(@b@y) + @a@\, y e^{-@b@x}\sin(@b@y) \] is harmonic. Find the harmonic conjugate \textbf{$U$} of \textbf{$V$} such that \textbf{$U+Vi$} becomes analytic."
+        r"Show that the function \[ U(x,y) = @a@\, x e^{-@b@x}\cos(@b@y) \;+\; @a@\, y e^{-@b@x}\sin(@b@y) \] is harmonic. Find the harmonic conjugate \textbf{$V$} of \textbf{$U$} such that \textbf{$U+Vi$} becomes analytic.",
+
+        r"Show that the function \[ V(x,y) = @a@\, x e^{-@b@x}\cos(@b@y) \;+\; @a@\, y e^{-@b@x}\sin(@b@y) \] is harmonic. Find the harmonic conjugate \textbf{$U$} of \textbf{$V$} such that \textbf{$U+Vi$} becomes analytic."
     ]
     return arr[n - 1].replace("@a@", str(a)).replace("@b@", str(b))
 
