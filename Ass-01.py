@@ -497,7 +497,7 @@ while True:
     )
 
     Q8 = Q8_get_limit_LHopital(
-        generate_integers_range(ID, "Q8_n", 1, 1, 2)[0],
+        generate_integers_range(ID, "Q8_n", 1, 1, 4)[0],
         generate_integers_range(ID, "Q8_a", 1, 2, 9)[0],
         generate_integers_range(ID, "Q8_b", 1, 2, 9)[0],
     )
