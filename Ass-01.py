@@ -30,7 +30,7 @@ COURSE_NAME = r"Complex Variables and Laplace Transformations"
 SECTION = "12"
 TOTAL_POINTS = "150"
 
-TEMPLATE_PATH = "question_template.tex"
+TEMPLATE_PATH = "assignment_01_template.tex"
 WORKBOOK_PATH = "course-attendee.xlsx"
 SHEET_NAME = "Worksheet"
 LOGO_FILE = "Brac_University_Logo.png"
@@ -199,7 +199,7 @@ def Q2_get_graphing_question_equality(n: int, a: int, b: int) -> str:
         .replace("2a+b", str(2 * a + b))
         .replace("2a-b", str(2 * a - b))
     )
-    return rf"Describe the locus $\displaystyle {s}$ on the complex plane."
+    return rf"Describe the equation $\displaystyle {s}$ graphically on the complex plane."
 
 
 def Q3_get_graphing_question_inequality(n: int, a: int, b: int) -> str:
@@ -233,7 +233,7 @@ def Q3_get_graphing_question_inequality(n: int, a: int, b: int) -> str:
         .replace("2a+b", str(2 * a + b))
         .replace("2a-b", str(2 * a - b))
     )
-    return rf"Describe the region $\displaystyle {s}$ on the complex plane."
+    return rf"Describe the region $\displaystyle {s}$ graphically on the complex plane."
 
 
 def Q4_get_solve_trig(a: int, r_val: int, theta_index: int) -> str:
@@ -294,8 +294,10 @@ def Q7_get_limit_not_exists(n: int) -> str:
 
 def Q8_get_limit_LHopital(n: int, a: int, b: int) -> str:
     arr = [
-        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\sin z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}}.$$",
-        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\tan z}{z} \right)^{\frac{@a@ \sin(@b@z)}{z - \sin z}}.$$",
+        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\sin z}{z} \right)^{\frac{@a@ \sin(z)}{z - \sin z}}.$$",
+        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \frac{\tan z}{z} \right)^{\frac{@a@ \sin(z)}{z - \sin z}}.$$",
+        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \cos z \right)^{\frac{@a@ \sin(z)}{z - \sin z}}.$$",
+        r"Using L’Hôpital’s rule, evaluate $$ \lim_{z \to 0} \left( \sec z \right)^{\frac{@a@ \sin(z)}{z - \sin z}}.$$",
     ]
     s = arr[n - 1]
     s = s.replace("@a@", str(a)).replace("@b@", str(b))
@@ -310,17 +312,7 @@ def Q9_get_Continuity(a: int, b: int) -> str:
     )
 
 
-def Q10_get_derivative(n: int, a: int, b: int, c: int) -> str:
-    arr = [
-        r"Using the definition, show that $$f(z)=@a@z^2 + @b@z - @c@$$ is differentiable at all points. Also find the derivative.",
-        r"Using the definition, show that $$f(z)=@a@z\bar{z} - @b@z + @c@\bar{z}$$ is not differentiable at $z=0$.",
-    ]
-    s = arr[n - 1]
-    s = s.replace("@a@", str(a)).replace("@b@", str(b)).replace("@c@", str(c))
-    return s
-
-
-def Q11_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
+def Q10_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
     arr = [
         r"Using the definition, find the derivative of $ \displaystyle f(z) = \frac{@a@z-@b@}{@c@z+@d@i} \quad \text{at} \quad z = i$.",
         r"Using the definition, find the derivative of $ \displaystyle f(z) = \frac{@a@}{@b@z + @c@} \quad \text{at} \quad z = z_0$.",
@@ -333,6 +325,16 @@ def Q11_get_derivative(n: int, a: int, b: int, c: int, d: int) -> str:
         .replace("@c@", str(c))
         .replace("@d@", str(d))
     )
+    return s
+
+
+def Q11_get_derivative(n: int, a: int, b: int, c: int) -> str:
+    arr = [
+        r"Using the definition, show that $$f(z)=@a@z^3 + @b@z - @c@$$ is differentiable at all points. Also find the derivative.",
+        r"Using the definition, show that $$f(z)=@a@z\bar{z} - @b@z + @c@\bar{z}$$ is not differentiable at any point.",
+    ]
+    s = arr[n - 1]
+    s = s.replace("@a@", str(a)).replace("@b@", str(b)).replace("@c@", str(c))
     return s
 
 
@@ -506,18 +508,18 @@ while True:
     )
 
     Q10 = Q10_get_derivative(
-        generate_integers_range(ID, "Q10_n", 1, 1, 2)[0],
+        generate_integers_range(ID, "Q10_n", 1, 1, 3)[0],
         generate_integers_range(ID, "Q10_a", 1, 2, 9)[0],
         generate_integers_range(ID, "Q10_b", 1, 2, 9)[0],
         generate_integers_range(ID, "Q10_c", 1, 2, 9)[0],
+        generate_integers_range(ID, "Q10_d", 1, 2, 9)[0],
     )
 
     Q11 = Q11_get_derivative(
-        generate_integers_range(ID, "Q11_n", 1, 1, 3)[0],
+        generate_integers_range(ID, "Q11_n", 1, 1, 2)[0],
         generate_integers_range(ID, "Q11_a", 1, 2, 9)[0],
         generate_integers_range(ID, "Q11_b", 1, 2, 9)[0],
         generate_integers_range(ID, "Q11_c", 1, 2, 9)[0],
-        generate_integers_range(ID, "Q11_d", 1, 2, 9)[0],
     )
 
     Q12 = Q12_get_analytic(
